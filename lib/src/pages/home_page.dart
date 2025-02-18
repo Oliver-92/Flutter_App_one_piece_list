@@ -15,10 +15,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.black.withAlpha(500),
       body: Column(
-        children: <Widget> [
+        children: <Widget>[
           Header(),
           ListCharacters(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 95, 25, 208),
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+          
+        ),
       ),
     );
   }
