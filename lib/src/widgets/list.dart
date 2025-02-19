@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/detail_page.dart';
@@ -68,8 +69,9 @@ class _ListCharacterstState extends State<ListCharacters> {
   Widget cardsCharacters(String name, int color, String image) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: ((context) => DetailPage(color: color, image: image, name: name))));
+        Navigator.of(context).push(CupertinoPageRoute(
+            builder: ((context) =>
+                DetailPage(color: color, image: image, name: name))));
       },
       child: Container(
           margin: EdgeInsets.only(bottom: 20),
@@ -98,7 +100,9 @@ class _ListCharacterstState extends State<ListCharacters> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     padding: EdgeInsets.all(8),
-                    child: Image.asset("assets/$image"),
+                    child: Hero(
+                      tag: color,
+                      child: Image.asset("assets/$image")),
                   ),
                   SizedBox(
                     width: 10,
